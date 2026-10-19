@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Category: Gaming - akarineren</title>
+<meta name="description" content="Thoughts on software engineering, open-source, and the occasional rabbit hole.">
+<meta name="author" content="akarineren">
+<meta name="generator" content="rin v0.0.0-20261019065106-b0b01e13ec50">
+<link rel="canonical" href="https://akarineren.github.io/categories/gaming/">
+<link rel="alternate" type="application/atom+xml" title="akarineren" href="/atom.xml">
+<link rel="alternate" type="application/rss+xml" title="akarineren" href="/rss.xml">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=eac6a00e">
+<link rel="stylesheet" href="/css/chroma-light.css" media="(prefers-color-scheme: light)" id="chroma-light">
+<link rel="stylesheet" href="/css/chroma-dark.css" media="(prefers-color-scheme: dark)" id="chroma-dark">
+<script>
+(function () {
+  var root = document.documentElement, system = matchMedia("(prefers-color-scheme: dark)"), saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved !== "light" && saved !== "dark") saved = null;
+  function pressed() {
+    var choice = saved || "auto";
+    root.dataset.theme = choice;
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
+      b.title = b.getAttribute("data-title-" + choice);
+      b.setAttribute("aria-label", b.title);
+    });
+  }
+  function apply(dark) {
+    root.classList.toggle("dark", dark);
+    root.classList.toggle("light", !dark);
+    document.getElementById("chroma-light").media = dark ? "not all" : "all";
+    document.getElementById("chroma-dark").media = dark ? "all" : "not all";
+    pressed();
+    document.dispatchEvent(new CustomEvent("rin:theme", { detail: { dark: dark } }));
+  }
+  function cycle(from) {
+    
+    var sys = system.matches ? "dark" : "light", other = sys === "dark" ? "light" : "dark";
+    saved = !saved ? other : saved === other ? sys : null;
+    try { saved ? localStorage.setItem("theme", saved) : localStorage.removeItem("theme"); } catch (e) {}
+    var dark = saved ? saved === "dark" : system.matches;
+    if (dark === root.classList.contains("dark")) return pressed();
+    var change = function () { apply(dark); };
+    if (!document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) return change();
+    var box = from.getBoundingClientRect(), x = box.left + box.width / 2, y = box.top + box.height / 2;
+    var r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    document.startViewTransition(change).ready.then(function () {
+      root.animate(
+        { clipPath: ["circle(0 at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
+        { duration: 500, easing: "cubic-bezier(0.4, 0, 0.2, 1)", pseudoElement: "::view-transition-new(root)" }
+      );
+    });
+  }
+  apply(saved ? saved === "dark" : system.matches);
+  root.dataset.js = "";
+  system.addEventListener("change", function () { if (!saved) apply(system.matches); });
+  addEventListener("storage", function (e) { if (e.key === "theme") { saved = e.newValue; apply(saved ? saved === "dark" : system.matches); } });
+  document.addEventListener("DOMContentLoaded", pressed);
+  document.addEventListener("click", function (e) {
+    var button = e.target.closest("[data-theme-toggle]");
+    if (button) cycle(button);
+  });
+})();
+</script>
+<link rel="icon" href="/avatar.jpg">
+<meta property="og:site_name" content="akarineren">
+<meta property="og:title" content="Category: Gaming">
+<meta property="og:description" content="Thoughts on software engineering, open-source, and the occasional rabbit hole.">
+<meta property="og:url" content="https://akarineren.github.io/categories/gaming/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+
+<meta property="og:image" content="https://akarineren.github.io/avatar.jpg">
+</head>
+<body class="flex min-h-screen flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+<header>
+  <div class="wrap flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-2 py-3">
+    <a href="/" class="flex items-center gap-3 text-lg font-semibold text-gray-900 dark:text-gray-100">
+      <img src="/avatar.jpg" alt="" width="28" height="28" class="size-7 rounded-full object-cover">
+      <span>akarineren</span>
+    </a>
+    <nav class="flex items-center gap-5 text-sm sm:gap-7 sm:text-base" aria-label="main">
+      <a href="/archives/" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">Posts</a>
+      <a href="/atom.xml" aria-label="RSS" class="-m-1.5 inline-flex p-1.5 text-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+      <button type="button" data-theme-toggle aria-label="切换配色" title="切换配色"
+        data-title-light="配色：浅色（点击切换）" data-title-dark="配色：暗色（点击切换）" data-title-auto="配色：自动（点击切换）"
+        class="-m-1.5 hidden cursor-pointer p-1.5 text-lg js:inline-grid text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">
+        <span class="col-start-1 row-start-1 scale-0 rotate-90 opacity-0 transition duration-500 ease-out motion-reduce:transition-none in-data-[theme=light]:scale-100 in-data-[theme=light]:rotate-0 in-data-[theme=light]:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+</span>
+        <span class="col-start-1 row-start-1 scale-0 rotate-90 opacity-0 transition duration-500 ease-out motion-reduce:transition-none in-data-[theme=dark]:scale-100 in-data-[theme=dark]:rotate-0 in-data-[theme=dark]:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+</span>
+        <span class="col-start-1 row-start-1 scale-0 rotate-90 opacity-0 transition duration-500 ease-out motion-reduce:transition-none in-data-[theme=auto]:scale-100 in-data-[theme=auto]:rotate-0 in-data-[theme=auto]:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 0 0 0-12z" fill="currentColor"/></svg>
+</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-1">
+
+<div class="wrap pb-24">
+  <div class="pb-11 pt-12 sm:pt-16">
+  <a href="/categories/" class="mb-6 inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+所有分类</a>
+  <p class="mb-1.5 text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400 uppercase">Category</p>
+  <h1 class="text-3xl/tight font-bold tracking-tight text-balance text-gray-900 dark:text-gray-100 sm:text-4xl/tight">Gaming</h1>
+  <p class="mt-3 text-base text-gray-600 dark:text-gray-400 sm:text-lg">1 篇文章</p>
+</div>
+
+  <div class="max-w-4xl pt-3">
+    
+<div>
+  <article class="flex gap-4">
+    <div class="w-13 shrink-0 pt-0.5 tabular-nums text-sm text-gray-500 dark:text-gray-400 sm:w-18">2024</div>
+    <div class="min-w-0 flex-1">
+      <h2 class="text-base/snug font-semibold text-gray-900 dark:text-gray-100 sm:text-lg/snug">
+        <a href="/posts/nintendo-switch-save-export-yuzu-emulator/" class="hover:text-sky-800 dark:hover:text-sky-400">Switch 存档导出到 Yuzu 模拟器</a>
+      </h2>
+    </div>
+    <time datetime="2024-09-30T00:00:00&#43;08:00" class="shrink-0 pt-0.5 tabular-nums text-sm text-gray-500 dark:text-gray-400">09-30</time>
+  </article>
+</div>
+
+  </div>
+  
+</div>
+
+</main>
+<footer class="">
+  <div class="wrap flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-2 py-3 text-sm text-gray-500 dark:text-gray-400">
+    <p>© akarineren</p>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="footer">
+      <a href="https://github.com/akarineren" rel="me" class="hover:text-gray-900 dark:hover:text-gray-100">GitHub</a>
+      <a href="/atom.xml" class="hover:text-gray-900 dark:hover:text-gray-100">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <title>akarineren</title>
+  <subtitle>Thoughts on software engineering, open-source, and the occasional rabbit hole.</subtitle>
+  <id>https://akarineren.github.io/</id>
+  <updated>2024-10-05T00:00:00+08:00</updated>
+  <link href="https://akarineren.github.io/atom.xml" rel="self" type="application/atom+xml"></link>
+  <link href="https://akarineren.github.io/" rel="alternate" type="text/html"></link>
+  <author>
+    <name>akarineren</name>
+  </author>
+  <generator>rin v0.0.0-20261019065106-b0b01e13ec50</generator>
+  <entry>
+    <title>红米 AX6000 刷 OpenWrt 固件</title>
+    <id>https://akarineren.github.io/posts/redmi-ax6000-flash-openwrt-firmware/</id>
+    <link href="https://akarineren.github.io/posts/redmi-ax6000-flash-openwrt-firmware/" rel="alternate" type="text/html"></link>
+    <published>2024-10-05T00:00:00+08:00</published>
+    <updated>2024-10-05T00:00:00+08:00</updated>
+    <category term="Hardware"></category>
+    <category term="Networking"></category>
+    <category term="OpenWrt"></category>
+    <category term="tutorial"></category>
+    <summary type="html">日本运营商给的路由器有点拉跨，而且费用很高，这个价钱完全可以自己买一个很好的路由器了。 AX6000 路由器的 CPU 是 MTK 2021 年发布的 Filogic 830 平台，具体型号是 mt7986a，四核 ARM A53 的架构，主频…</summary>
+  </entry>
+  <entry>
+    <title>Switch 存档导出到 Yuzu 模拟器</title>
+    <id>https://akarineren.github.io/posts/nintendo-switch-save-export-yuzu-emulator/</id>
+    <link href="https://akarineren.github.io/posts/nintendo-switch-save-export-yuzu-emulator/" rel="alternate" type="text/html"></link>
+    <published>2024-09-30T00:00:00+08:00</published>
+    <updated>2024-09-30T00:00:00+08:00</updated>
+    <category term="Gaming"></category>
+    <category term="Gaming"></category>
+    <category term="Emulator"></category>
+    <category term="tutorial"></category>
+    <summary type="html">这一切的基础是 Switch 已破解。 JKSV 导出存档 导入到 Yuzu 模拟器 JKSV 使用 JKSV Switch 开源存档导出工具 https://github.com/J-D-K/JKSV 下载完毕后，把 JKSV.nro文件拷贝到 TF 卡中的以下目录…</summary>
+  </entry>
+  <entry>
+    <title>Krpano 浏览器支持情况以及插件解密</title>
+    <id>https://akarineren.github.io/posts/krpano-browser-support-plugin-decrypt/</id>
+    <link href="https://akarineren.github.io/posts/krpano-browser-support-plugin-decrypt/" rel="alternate" type="text/html"></link>
+    <published>2018-05-22T00:00:00+08:00</published>
+    <updated>2018-05-22T00:00:00+08:00</updated>
+    <category term="Engineering"></category>
+    <category term="Panorama"></category>
+    <category term="JavaScript"></category>
+    <category term="tutorial"></category>
+    <summary type="html">Krpano 是一套全景解决方案 支持视频以及图片，也是商业化项目使用最多的全景播放器之一。不过它并不免费，其特点是在支持 HTML5 模式中采用 WebGL 以及 CSS3D 实现，在不支持 HTML5 标准的浏览器中，可以使用 Flash 实现，而对于我们来说不需要关心…</summary>
+  </entry>
+  <entry>
+    <title>如何使用 PJAX 让你的网站飞起来</title>
+    <id>https://akarineren.github.io/posts/use-pjax-speed-up-your-website/</id>
+    <link href="https://akarineren.github.io/posts/use-pjax-speed-up-your-website/" rel="alternate" type="text/html"></link>
+    <published>2016-04-24T00:00:00+08:00</published>
+    <updated>2016-04-24T00:00:00+08:00</updated>
+    <category term="Engineering"></category>
+    <category term="JavaScript"></category>
+    <category term="Frontend"></category>
+    <category term="Performance"></category>
+    <category term="tutorial"></category>
+    <summary type="html">在通常的网站中,如果需要链接到其它的页面(不是数据),只能刷新整个网站 做一次链接的跳转. &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;header&amp;gt; Header &amp;lt;/header&amp;gt; &amp;lt;main&amp;gt; Content &amp;lt;/main&amp;gt; &amp;lt;footer&amp;gt; Footer…</summary>
+  </entry>
+</feed>
